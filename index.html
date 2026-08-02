@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elvin Vianchho Chia | Portofolio 12 PPLG 1</title>
+  <meta name="description" content="Website Portofolio Elvin Vianchho Chia - Siswa Kelas 12 PPLG 1 (Game Developer Unity, Video Editor CapCut, Photographer)">
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              400: '#38bdf8',
+              500: '#06b6d4',
+              600: '#0284c7',
+              accent: '#6366f1',
+              dark: '#0b0f19',
+              card: '#131b2e',
+              border: '#1e293b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0f19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #06b6d4;
+    }
+
+    /* Glassmorphism utility */
+    .glass-card {
+      background: rgba(19, 27, 46, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .glass-nav {
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Glow Effect */
+    .glow-cyan {
+      box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.3);
+    }
+    .glow-indigo {
+      box-shadow: 0 0 30px -5px rgba(99, 102, 241, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-cyan-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+  <!-- ==================== NAVBAR ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Logo Branding -->
+        <a href="#beranda" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white font-extrabold text-lg shadow-lg group-hover:scale-105 transition-transform">
+            EV
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">
+              Elvin Viancho Chia
+            </span>
+            <span class="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">12 PPLG 1</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center gap-1 bg-slate-900/60 p-1.5 rounded-full border border-slate-800">
+          <a href="#beranda" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5">
+            <i data-lucide="home" class="w-4 h-4"></i> Beranda
+          </a>
+          <a href="#keahlian" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5">
+            <i data-lucide="zap" class="w-4 h-4"></i> Keahlian
+          </a>
+          <a href="#portofolio" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5">
+            <i data-lucide="folder-git-2" class="w-4 h-4"></i> Karya & Portofolio
+          </a>
+          <a href="#kontak" class="px-4 py-2 text-sm font-medium text-slate-300 hover:text-cyan-400 hover:bg-slate-800/60 rounded-full transition-all flex items-center gap-1.5">
+            <i data-lucide="mail" class="w-4 h-4"></i> Kontak
+          </a>
+        </nav>
+
+        <!-- CTA Button -->
+        <div class="hidden md:flex items-center">
+          <a href="#kontak" class="px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-xl hover:from-cyan-400 hover:to-indigo-500 transition-all shadow-md hover:shadow-cyan-500/25 flex items-center gap-2">
+            <i data-lucide="message-square" class="w-4 h-4"></i> Hubungi
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Navigation Menu">
+          <i data-lucide="menu" id="menu-icon-open" class="w-6 h-6"></i>
+          <i data-lucide="x" id="menu-icon-close" class="w-6 h-6 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-950/95 backdrop-blur-xl px-4 pt-2 pb-6 space-y-2">
+      <a href="#beranda" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-cyan-400 flex items-center gap-3">
+        <i data-lucide="home" class="w-5 h-5 text-cyan-400"></i> Beranda
+      </a>
+      <a href="#keahlian" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-cyan-400 flex items-center gap-3">
+        <i data-lucide="zap" class="w-5 h-5 text-indigo-400"></i> Keahlian Khusus
+      </a>
+      <a href="#portofolio-fotografi" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-cyan-400 flex items-center gap-3">
+        <i data-lucide="camera" class="w-5 h-5 text-emerald-400"></i> Karya Fotografi
+      </a>
+      <a href="#portofolio-videografi" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-cyan-400 flex items-center gap-3">
+        <i data-lucide="video" class="w-5 h-5 text-purple-400"></i> Karya Videografi
+      </a>
+      <a href="#portofolio-gamedev" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-cyan-400 flex items-center gap-3">
+        <i data-lucide="gamepad-2" class="w-5 h-5 text-pink-400"></i> Karya Game Dev
+      </a>
+      <a href="#kontak" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-cyan-400 flex items-center gap-3">
+        <i data-lucide="mail" class="w-5 h-5 text-cyan-400"></i> Kontak
+      </a>
+    </div>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-grow pt-24 sm:pt-28">
+
+    <!-- HERO SECTION (Perkenalan Awal) -->
+    <section id="beranda" class="py-12 sm:py-20 lg:py-24 relative overflow-hidden">
+      <!-- Background Ambient Glow Shapes -->
+      <div class="absolute top-1/4 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-10 right-10 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Text Content -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs sm:text-sm font-semibold">
+              <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+              Siswa Kelas 12 PPLG 1 &bull; Web & Game Dev
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Halo, Saya <br class="hidden sm:inline" />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-indigo-400 to-purple-400">
+                Elvin Viancho Chia
+              </span>
+            </h1>
+
+            <!-- Deskripsi Singkat Elvin (Dapat diisi/di-edit nanti) -->
+            <!-- TIPS EDIT: Kamu bisa mengganti teks di dalam paragraf <p> di bawah ini sesuai keinginan -->
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed mx-auto lg:mx-0 font-normal">
+              Siswa kelas 12 jurusan Pengembangan Perangkat Lunak dan Gim (PPLG 1) yang antusias dalam pembuatan <span class="text-cyan-400 font-semibold">Game Unity (C# & HTML)</span>, pengeditan <span class="text-indigo-400 font-semibold">Video Kreatif (CapCut)</span>, dan penangkapan momen estetik melalui <span class="text-purple-400 font-semibold">Fotografi</span>.
+            </p>
+
+            <!-- Social Media Links -->
+            <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+              <!-- GitHub Link -->
+              <a href="https://iforgorrrrrrgrr.github.io/Siluman/" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-slate-800 transition-all group" title="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+              </svg>
+              </a>
+              <!-- Instagram Link -->
+              <a href="https://www.instagram.com/convivial_person/" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-pink-400 hover:border-pink-500/50 hover:bg-slate-800 transition-all group" title="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                </svg>
+              </a>
+              <!-- Google Drive Direct -->
+              <a href="https://drive.google.com/drive/folders/1qM4h1nsuEkJN2p7E8UTbztQbv7ky_Y-k?usp=sharing" target="_blank" class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-emerald-400 hover:border-emerald-500/50 hover:bg-slate-800 transition-all group" title="Google Drive Portfolio">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
+                  <path d="M15.545 6.558a9.4 9.4 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.7 7.7 0 0 1 5.352 2.082l-2.284 2.284A4.35 4.35 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.8 4.8 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.7 3.7 0 0 0 1.599-2.431H8v-3.08z"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <a href="#portofolio" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/35 transition-all text-center flex items-center justify-center gap-2 group">
+                Lihat Portofolio Karya
+                <i data-lucide="arrow-down-right" class="w-5 h-5 group-hover:translate-x-0.5 group-hover:translate-y-0.5 transition-transform"></i>
+              </a>
+              <a href="#kontak" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-semibold text-slate-200 bg-slate-900/80 border border-slate-700 hover:bg-slate-800 hover:border-slate-500 transition-all text-center flex items-center justify-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i> Kontak Elvin
+              </a>
+            </div>
+          </div>
+
+          <!-- Profile Picture Placeholder Card -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 group">
+              <!-- Glow Ring -->
+              <div class="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 rounded-3xl blur-lg opacity-70 group-hover:opacity-100 transition duration-500"></div>
+              
+              <!-- Container Placeholder Gambar -->
+              <div class="relative w-full h-full rounded-3xl bg-slate-900 border border-slate-700/80 flex flex-col items-center justify-center text-center p-6 shadow-2xl overflow-hidden">
+                
+                <!-- UNTUK MENGGANTI FOTO PROFIL: 
+                     Hapus/Comment div placeholder icon di bawah, lalu un-comment tag <img> berikut:
+                     <img src="path/ke/foto-elvin.jpg" alt="Foto Profil Elvin Vianchho Chia" class="w-full h-full object-cover rounded-3xl" />
+                -->
+                
+                <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-slate-800 border-2 border-dashed border-cyan-500/60 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <i data-lucide="user" class="w-12 h-12 text-cyan-400"></i>
+                </div>
+                
+                <h3 class="text-lg font-bold text-white">Foto Profil Elvin</h3>
+                <p class="text-xs text-slate-400 mt-1 max-w-xs">
+                  Placeholder Foto (12 PPLG 1)<br/>
+                  <span class="text-cyan-400/80 font-mono text-[11px]">alt="Foto Profil Elvin Vianchho Chia"</span>
+                </p>
+                <div class="mt-4 px-3 py-1 rounded-full bg-slate-800 border border-slate-700 text-[11px] text-slate-300 flex items-center gap-1.5">
+                  <i data-lucide="image-plus" class="w-3.5 h-3.5 text-indigo-400"></i> Siap Tambah Foto
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- KEAHLIAN KHUSUS SECTION -->
+    <section id="keahlian" class="py-16 sm:py-24 bg-slate-950/60 border-y border-slate-800/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i> Skills & Expertise
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Keahlian Khusus
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg">
+            Kombinasi keahlian pemrograman game, produksi video kreatif, dan komposisi visual fotografi.
+          </p>
+        </div>
+
+        <!-- 3 Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          <!-- Card 1: Fotografi -->
+          <div class="glass-card rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all duration-300">
+                <i data-lucide="camera" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                Fotografi
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Memahami prinsip dasar komposisi visual, pengaturan pencahayaan (lighting), angle estetik, serta proses *retouching* dan *color grading* untuk menghasilkan foto berkarakter.
+              </p>
+            </div>
+            
+            <div class="pt-6 border-t border-slate-800/80 mt-6">
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-cyan-300 border border-slate-800">Composition</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-cyan-300 border border-slate-800">Color Grading</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-cyan-300 border border-slate-800">Lightroom</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Editing Video (CapCut) -->
+          <div class="glass-card rounded-2xl p-8 hover:border-indigo-500/50 transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-all duration-300">
+                <i data-lucide="video" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">
+                Editing Video (CapCut)
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Mahir mengedit video menggunakan CapCut untuk kebutuhan konten cinematic, short video (TikTok/Reels), pemotongan presisi mengikuti ritme musik (beat-sync), serta penyelarasan efek audio & transisi.
+              </p>
+            </div>
+
+            <div class="pt-6 border-t border-slate-800/80 mt-6">
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-indigo-300 border border-slate-800">CapCut Pro</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-indigo-300 border border-slate-800">Beat Sync</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-indigo-300 border border-slate-800">Sound Design</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Game Dev (Unity / C#) -->
+          <div class="glass-card rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 group hover:-translate-y-1.5 flex flex-col justify-between">
+            <div class="space-y-4">
+              <div class="w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
+                <i data-lucide="gamepad-2" class="w-7 h-7"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">
+                Game Dev (Unity & C#)
+              </h3>
+              <p class="text-slate-300 text-sm leading-relaxed">
+                Fokus utama siswa PPLG dalam merancang dan memprogram **Game 2D & 3D di Unity**. Mampu mengimplementasikan logika C#, sistem fisika game, skrip pergerakan karakter, serta membangun UI game.
+              </p>
+            </div>
+
+            <div class="pt-6 border-t border-slate-800/80 mt-6">
+              <div class="flex flex-wrap gap-2">
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-purple-300 border border-slate-800">Unity Engine</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-purple-300 border border-slate-800">C# Scripting</span>
+                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-xs font-medium text-purple-300 border border-slate-800">2D/3D Physics</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTOFOLIO / KARYA SECTION -->
+    <section id="portofolio" class="py-16 sm:py-24 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+        
+        <!-- Main Section Header -->
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i> Featured Work
+          </div>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            Karya &amp; Portofolio
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg">
+            Kumpulan hasil karya Fotografi, Editing Video CapCut, dan Game Development (Unity).
+          </p>
+        </div>
+
+        <!-- ================= FOTOGRAFI SECTION (WITH DUAL-VIEW SWITCHER) ================= -->
+        <div id="portofolio-fotografi" class="space-y-8 scroll-mt-28">
+          <!-- Sub-Header & Switcher Control -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-800 pb-6">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-cyan-400 font-semibold text-sm">
+                <i data-lucide="camera" class="w-4 h-4"></i> Category 01
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+                Karya Fotografi
+              </h3>
+              <p class="text-slate-400 text-sm max-w-xl">
+                Penjelajahan visual dalam fotografi jalanan, arsitektur, dan potret sinematik.
+              </p>
+            </div>
+          </div>
+          <!--CAROUSEL VIEW -->
+          <div id="photo-carousel-container" class="relative group">
+            <div class="relative overflow-hidden rounded-2xl glass-card border border-slate-800 min-h-[380px] sm:min-h-[460px] flex items-center justify-center">
+              
+              <!-- Carousel Slides Container -->
+              <div id="carousel-slides" class="w-full h-full flex transition-transform duration-500 ease-in-out">
+                
+                <!-- Slide Foto -->
+                <div class="w-full flex-shrink-0 p-6 sm:p-10 flex flex-col items-center justify-center">
+                  <div class="w-full max-w-2xl h-64 sm:h-80 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/item">
+                    <img src="image/20250201_152238.jpg" alt="Foto Sunset Urban Elvin" class="w-full h-full object-cover rounded-xl"alt="Foto Landscape" />
+                  </div>
+                </div>
+                <div class="w-full flex-shrink-0 p-6 sm:p-10 flex flex-col items-center justify-center">
+                  <div class="w-full max-w-2xl h-64 sm:h-80 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/item">
+                    <img src="image/20250131_214857.jpg" alt="Foto Sunset Urban Elvin" class="w-full h-full object-cover rounded-xl"alt="Foto Landscape" />
+                  </div>
+                </div>
+                <div class="w-full flex-shrink-0 p-6 sm:p-10 flex flex-col items-center justify-center">
+                  <div class="w-full max-w-2xl h-64 sm:h-80 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/item">
+                    <img src="image/20250127_103535.jpg" alt="Foto Sunset Urban Elvin" class="w-full h-full object-cover rounded-xl"alt="Foto Landscape" />
+                  </div>
+                </div>
+                <div class="w-full flex-shrink-0 p-6 sm:p-10 flex flex-col items-center justify-center">
+                  <div class="w-full max-w-2xl h-64 sm:h-80 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/item">
+                    <img src="image/20250126_094804.jpg" alt="Foto Sunset Urban Elvin" class="w-full h-full object-cover rounded-xl"alt="Foto Landscape" />
+                  </div>
+                </div>
+                <div class="w-full flex-shrink-0 p-6 sm:p-10 flex flex-col items-center justify-center">
+                  <div class="w-full max-w-2xl h-64 sm:h-80 rounded-xl bg-slate-950 border border-slate-800 flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group/item">
+                    <img src="image/20250126_094956.jpg" alt="Foto Sunset Urban Elvin" class="w-full h-full object-cover rounded-xl"alt="Foto Landscape" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Carousel Control Buttons -->
+              <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 border border-slate-700 text-white hover:bg-cyan-500 hover:text-slate-950 flex items-center justify-center transition-all shadow-lg">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+              </button>
+              <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-slate-900/80 border border-slate-700 text-white hover:bg-cyan-500 hover:text-slate-950 flex items-center justify-center transition-all shadow-lg">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+              </button>
+
+              <!-- Carousel Dots Indicator -->
+              <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <button onclick="goToSlide(0)" class="carousel-dot w-3 h-3 rounded-full bg-cyan-400 transition-all"></button>
+                <button onclick="goToSlide(1)" class="carousel-dot w-3 h-3 rounded-full bg-slate-700 hover:bg-slate-500 transition-all"></button>
+                <button onclick="goToSlide(2)" class="carousel-dot w-3 h-3 rounded-full bg-slate-700 hover:bg-slate-500 transition-all"></button>
+                <button onclick="goToSlide(3)" class="carousel-dot w-3 h-3 rounded-full bg-slate-700 hover:bg-slate-500 transition-all"></button>
+                <button onclick="goToSlide(4)" class="carousel-dot w-3 h-3 rounded-full bg-slate-700 hover:bg-slate-500 transition-all"></button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= VIDEOGRAFI SECTION ================= -->
+        <div id="portofolio-videografi" class="space-y-8 scroll-mt-28 border-t border-slate-800/80 pt-16">
+          
+          <!-- Sub-Header -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-indigo-400 font-semibold text-sm">
+                <i data-lucide="video" class="w-4 h-4"></i> Category 02
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+                Karya Videografi (Editing CapCut)
+              </h3>
+              <p class="text-slate-400 text-sm max-w-xl">
+                Video showcase kreatif dengan teknik editing CapCut.
+              </p>
+            </div>
+
+            <!-- Tombol Direct Link Google Drive Video (Required) -->
+            <a href="https://www.youtube.com/watch?v=Dl1buChUYzU" target="_blank" class="px-5 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2.5 transition-all self-start md:self-auto">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+              </svg>
+              Buka Via Youtube
+            </a>
+          </div>
+
+          <!-- Video Player Mockup Container -->
+          <div class="glass-card rounded-2xl border border-slate-800 p-6 sm:p-8 space-y-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Left: Video Screen Placeholder -->
+              <div class="lg:col-span-7">
+                <div class="relative w-full aspect-video rounded-xl bg-slate-950 border border-slate-800 overflow-hidden flex flex-col items-center justify-center p-6 text-center group">
+                  
+                  <!-- UNTUK MENGGUNAKAN VIDEO SUNGGUHAN:
+                       Hapus/Comment isi div placeholder di bawah, lalu pasang tag video berikut:
+                       <video controls class="w-full h-full object-cover rounded-xl" src="path/video-elvin.mp4"></video>
+                       Atau <iframe> embed YouTube/Drive
+                  -->
+
+                  <!-- Overlay Play Icon Center -->
+                   <!--Use Live Server because youtube security policy thingy is too strict or open with gh-pages-->
+                  <iframe src="https://www.youtube.com/embed/Dl1buChUYzU" width="100%" height="100%" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+                  <!-- <div class="w-16 h-16 rounded-full bg-indigo-600/90 text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform mb-3 border border-indigo-400">
+                    <i data-lucide="play" class="w-8 h-8 ml-1 fill-white"></i>
+                  </div>
+                  
+                  <span class="font-bold text-white text-base sm:text-lg">Placeholder Screen Video Showcase</span>
+                  <span class="text-xs text-slate-400 font-mono mt-1">alt="Video Editing CapCut Showcase Elvin"</span> -->
+
+                  <!-- Fake Player Bottom Bar Controls -->
+                  <!-- <div class="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-slate-950 to-transparent flex items-center justify-between text-slate-300 text-xs px-4">
+                    <div class="flex items-center gap-3">
+                      <i data-lucide="play" class="w-4 h-4 text-cyan-400"></i>
+                      <span>01:24 / 02:45</span>
+                    </div>
+                    <div class="w-1/3 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                      <div class="w-1/2 h-full bg-cyan-400"></div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <i data-lucide="volume-2" class="w-4 h-4"></i>
+                      <i data-lucide="maximize" class="w-4 h-4"></i>
+                    </div>
+                  </div> -->
+
+                </div>
+              </div>
+
+              <!-- Right: Video Info & Direct Drive Link Detail -->
+              <div class="lg:col-span-5 space-y-5">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-semibold">
+                  <i data-lucide="film" class="w-3.5 h-3.5"></i> CapCut Edited Project
+                </div>
+
+                <h4 class="text-2xl font-bold text-white leading-snug">
+                  Vlog Mandarin SMK | LDKS Tahun Ajaran 2025/2026
+                </h4>
+
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  Video vlog mengenai LDKS Tahun Ajaran 2025/2026 SMK Cinta Kasih Tzu Chi yang dibawakan dengan bahasa Mandarin oleh Clarissa Hannah. 
+                </p>
+
+                <div class="space-y-2 pt-2">
+                  <div class="flex items-center gap-2 text-xs text-slate-400">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> Resolusi Asli 1080p 60fps (Full HD)
+                  </div>
+                  <div class="flex items-center gap-2 text-xs text-slate-400">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i> CapCut Pro FX
+                  </div>
+                </div>
+
+                <!-- Secondary Link Drive Button -->
+                <div class="pt-3">
+                  <a href="https://www.youtube.com/watch?v=Dl1buChUYzU" target="_blank" class="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-cyan-400 hover:text-cyan-300 font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                    Tonton Via Youtube
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ================= GAME DEV SECTION ================= -->
+        <div id="portofolio-gamedev" class="space-y-8 scroll-mt-28 border-t border-slate-800/80 pt-16">
+          
+          <!-- Sub-Header -->
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="space-y-2">
+              <div class="flex items-center gap-2 text-purple-400 font-semibold text-sm">
+                <i data-lucide="gamepad-2" class="w-4 h-4"></i> Category 03
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+                Karya Game Development (Unity, C#, & HTML)
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Project utama pembuatan game interaktif menggunakan Unity, C#, HTML, CSS dan Javascript.
+              </p>
+            </div>
+
+            <!-- Tombol Link GitHub Pages (Required) -->
+            <a href="https://iforgorrrrrrgrr.github.io/Siluman/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-purple-500/20 flex items-center justify-center gap-2.5 transition-all self-start md:self-auto">
+              <i data-lucide="globe" class="w-5 h-5"></i>
+              Mainkan Game (GitHub Pages Demo)
+            </a>
+          </div>
+
+          <!-- Game Card Showcase Container -->
+          <div class="glass-card rounded-2xl border border-slate-800 p-6 sm:p-8 space-y-6">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              
+              <!-- Left: Game Gameplay Screenshot Placeholder -->
+              <div class="lg:col-span-7">
+                <img src="path/ke/screenshot-game.jpg" alt="Screenshot Gameplay Game Unity Elvin" class="w-full h-full object-cover rounded-xl" />
+              </div>
+
+              <!-- Right: Game Details & GitHub Pages Link -->
+              <div class="lg:col-span-5 space-y-5">
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-semibold">HTML/CSS/JS</span>
+                  <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold">GH-Pages</span>
+                </div>
+
+                <h4 class="text-2xl font-bold text-white leading-snug">
+                  Siluman
+                </h4>
+
+                <!-- Deskripsi Game Dev -->
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  Sebuah pesan misterius teman-mu membawa dirimu ke dalam sebuah program rahasia yang dibuat oleh organisasi SILUMAN.
+                  Anda tidak peduli dan tetap memberanikan diri untuk mengikuti prosesnya sampai akhir. Jangan kau sesali keputusan yang
+                  telah kamu buat. 
+                </p>
+
+                <div class="bg-slate-950/80 p-4 rounded-xl border border-slate-800 space-y-2">
+                  <h5 class="text-xs font-bold text-slate-300 uppercase tracking-wider">Fitur Utama Game:</h5>
+                  <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
+                    <li>Quiz Game Interaktif</li>
+                    <li>Point and Click</li>
+                    <li>Visual & Audio Effects</li>
+                    <li>Hosting gratis melalui GitHub Pages</li>
+                  </ul>
+                </div>
+
+                <!-- Action Links for Game -->
+                <div class="pt-2 flex flex-col sm:flex-row gap-3">
+                  <a href="https://iforgorrrrrrgrr.github.io/Siluman/" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm flex items-center justify-center gap-2 transition-all shadow-md">
+                    <i data-lucide="play-circle" class="w-4 h-4"></i>
+                    Buka Game di GH-Pages
+                  </a>
+                  <a href="https://github.com/iforgorrrrrrgrr/Siluman" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-xl bg-slate-900 border border-slate-700 hover:bg-slate-800 text-slate-300 font-semibold text-sm flex items-center justify-center gap-2 transition-all">
+                    <i data-lucide="code" class="w-4 h-4"></i>
+                    Source Code
+                  </a>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION KONTAK -->
+    <section id="kontak" class="py-16 sm:py-24 bg-slate-950/80 border-t border-slate-800 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        
+        <div class="space-y-3">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i> Let's Connect
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Hubungi Elvin Vianchho Chia
+          </h2>
+          <p class="text-slate-400 text-base max-w-xl mx-auto">
+            Tertarik berkolaborasi dalam project Game Dev Unity, Video Editing CapCut, atau Fotografi? Kirim pesan secara langsung!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+          <!-- WhatsApp Contact -->
+          <a href="https://wa.me/6281387232338?text=Hi,%20Salam%20kenal." target="_blank" class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900 transition-all group flex flex-col items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+            </svg>
+            </div>
+            <span class="font-bold text-white text-sm">WhatsApp</span>
+            <span class="text-xs text-slate-400">Hubungi via Chat</span>
+          </a>
+
+          <!-- Email Contact -->
+          <a href="mailto:elvinvianchho@example.com" class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 hover:bg-slate-900 transition-all group flex flex-col items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+              <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
+              <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"/>
+            </svg>
+            </div>
+            <span class="font-bold text-white text-sm">Email Direct</span>
+            <span class="text-xs text-slate-400">elvinchia98@gmail.com</span>
+          </a>
+
+          <!-- Instagram Direct -->
+          <a href="https://www.instagram.com/convivial_person/" target="_blank" class="glass-card p-6 rounded-2xl border border-slate-800 hover:border-pink-500/50 hover:bg-slate-900 transition-all group flex flex-col items-center gap-3">
+            <div class="w-12 h-12 rounded-xl bg-pink-500/10 border border-pink-500/30 text-pink-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+            </svg>
+            </div>
+            <span class="font-bold text-white text-sm">Instagram DM</span>
+            <span class="text-xs text-slate-400">@convivial_person</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-950 border-t border-slate-800 py-8 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-white text-sm">Elvin Vianchho Chia</span>
+        <span class="text-slate-600">&bull;</span>
+        <span class="text-xs text-slate-400 font-medium">Kelas 12 PPLG 1</span>
+      </div>
+
+      <p class="text-xs text-slate-500 text-center">
+        &copy; 2026 Elvin Vianchho Chia. Dibuat dengan HTML &amp; Tailwind CSS.
+      </p>
+
+      <!-- Back to Top Button -->
+      <a href="#beranda" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all flex items-center gap-1.5 text-xs font-semibold" title="Kembali ke atas">
+        <i data-lucide="arrow-up" class="w-4 h-4"></i> Top
+      </a>
+
+    </div>
+  </footer>
+
+  <!-- ==================== JAVASCRIPT ==================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Mobile Menu Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      }
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+      });
+    });
+
+    // Dual-View Switcher for Photography (Carousel vs Grid Gallery)
+    function switchPhotoView(viewMode) {
+      const carouselContainer = document.getElementById('photo-carousel-container');
+      const galleryContainer = document.getElementById('photo-gallery-container');
+      const carouselBtn = document.getElementById('view-carousel-btn');
+      const galleryBtn = document.getElementById('view-gallery-btn');
+
+      if (viewMode === 'carousel') {
+        carouselContainer.classList.remove('hidden');
+        galleryContainer.classList.add('hidden');
+
+        carouselBtn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md";
+        galleryBtn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2";
+      } else {
+        carouselContainer.classList.add('hidden');
+        galleryContainer.classList.remove('hidden');
+
+        galleryBtn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-md";
+        carouselBtn.className = "px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2";
+      }
+    }
+
+    // Carousel Slider Logic
+    let currentSlide = 0;
+    const totalSlides = 5;
+    const slidesContainer = document.getElementById('carousel-slides');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    function updateCarousel() {
+      slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.className = "carousel-dot w-3 h-3 rounded-full bg-cyan-400 transition-all";
+        } else {
+          dot.className = "carousel-dot w-3 h-3 rounded-full bg-slate-700 hover:bg-slate-500 transition-all";
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+  </script>
+</body>
+</html>
